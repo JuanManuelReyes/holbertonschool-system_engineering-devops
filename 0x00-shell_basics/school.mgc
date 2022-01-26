@@ -1,2 +1,3 @@
 #!/bin/bash
-file -t -C -m school.mgc test/x=School
+file -C -m school.mgc
+file -i -m school.mgc
