@@ -1,1 +1,1 @@
-Readme of redirections
+Readme
