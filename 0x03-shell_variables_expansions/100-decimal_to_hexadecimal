@@ -1,2 +1,2 @@
-#!/bin/baSH
-echo $((16#DECIMAL))
+#!/bin/bash
+echo $((16#$DECIMAL))
