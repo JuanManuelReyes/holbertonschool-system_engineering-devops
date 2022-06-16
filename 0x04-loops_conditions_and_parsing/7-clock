@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#comment
+
+hs=0
+mins=1
+
+while ((hs<=12))
+do
+	echo "Hour: "$hs
+	
+	mins=1
+	while ((mins<=59))
+	do
+		echo "$mins"
+		((mins++))
+	done
+
+	((hs++))
+done
