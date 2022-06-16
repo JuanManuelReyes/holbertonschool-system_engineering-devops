@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#comment
+
+dir="$(ls)"
+
+for file in $dir;
+do
+	echo "$file" | cut -d "-" -f2
+done
