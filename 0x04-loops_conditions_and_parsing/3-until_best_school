@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#comment
+
+
+i=0
+until (( i == 10 ));
+do
+    echo "Best School";
+    (( i++ ));
+done
