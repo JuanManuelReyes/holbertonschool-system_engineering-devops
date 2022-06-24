@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#asd
+#This scripts pings 5 time to the ip
 
 if [ $# == 1 ]
 then
