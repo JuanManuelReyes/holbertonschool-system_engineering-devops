@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#https://unix.stackexchange.com/questions/494483/specifying-an-identityfile-with-ssh
+Host 54.144.71.6
+	PasswordAuthentication no
+	IdentifyFile ~/.ssh/school
+	IdentitiesOnly yes
