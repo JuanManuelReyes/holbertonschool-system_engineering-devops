@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo chmod 777 /var/www/html/index.html
+echo Hello World > /var/www/html/index.htmli
+sudo sed -i
+sudo service nginx start
