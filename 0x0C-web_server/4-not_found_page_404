@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#asd
+
+sudo apt update
+sudo apt -y install nginx
+sudo touch /var/www/html/error404-page.html
+sudo chmod 777 /var/www/html/error404-page.html
+sudo echo "Ceci n'est pas une page" > /var/www/html/error404-page.html
+sudo sed -i '55i error_page 404 /error404-page.html;' /etc/nginx/sites-enabled/default
+sudo service nginx restart
