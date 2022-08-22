@@ -1,19 +1,16 @@
 #Using Puppet, install flask from pip3
-exec { 'update':
-  command  => '/usr/bin/apt-get update',
-  provider => 'shell'
+exec { 'apt-update':
+  command  => '/usr/bin/apt-get update'
 }
-package { 'InstallNginx':
+package { 'nginx':
+  ensure => 'installed'
   name     => 'nginx',
-  provider => 'apt'
 }
 file_line { 'append':
- ensure => 'present',
  path => '/etc/nginx/nginx.conf', #File to append the line
  line => '      add_header X-Served-By ${HOSTNAME};' #Line to append
- after => 'server {'
+ after => 'server {',
 }
-exec { 'restart':
+exec { 'sudo service nginx restart':
   command  => '/usr/sbin/service nginx restart',
-  provider => 'shell'
 }
