@@ -10,7 +10,7 @@ exec { 'InstallNginx':
 }
 
 exec { 'append':
- command => 'sudo sed -i "/listen 80 default_server/a add_header X-Served-By '$HOSTNAME';" /etc/nginx/sites-enabled/default',
+ command => 'sudo sed -i "/listen 80 default_server/a add_header X-Served-By \$hostname;" /etc/nginx/sites-enabled/default',
  path => '/usr/bin/'
 }
 
