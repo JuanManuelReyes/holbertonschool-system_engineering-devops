@@ -1,20 +1,22 @@
-#Using Puppet, install flask from pip3
-exec { 'apt-update':
-  command => 'sudo apt update',
-  path  => '/usr/bin/'
+#Using Puppet
+exec { 'apt-get update':
+  command  => 'sudo apt-get update',
 }
 
-exec { 'InstallNginx':
-  command => 'sudo apt -y install nginx',
-  path  => '/usr/bin/'
+package { 'install-nginx':
+  ensure  => installed,
+  require => Exec['apt-get update'],
 }
 
-exec { 'append':
- command => 'sudo sed -i "/listen 80 default_server/a add_header X-Served-By \$hostname;" /etc/nginx/sites-enabled/default',
- path => '/usr/bin/'
+file_line { 'append':
+  ensure  => present,
+  path    => '/etc/nginx/sites-enabled/default',
+  after   => ':80 default_server;',
+  line    => "add_header X-Served-By ${hostname};",
+  require => Package['install-nginx'],
 }
 
-exec { 'NginxRestart':
-  command  => 'sudo service nginx restart',
-  path => '/usr/bin/'
+service { 'run-nginx':
+  ensure  => running,
+  require => File_line['append'],
 }
