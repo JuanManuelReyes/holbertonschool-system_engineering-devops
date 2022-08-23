@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#Takes a subdomain as argument and displays the info
+#https://www.man7.org/linux/man-pages/man1/awk.1p.html
+#https://linube.com/ayuda/articulo/287/como-utilizar-el-comando-dig#:~:text=Dig%20es%20un%20comando%20que,y%20tambi%C3%A9n%20desde%20Mac%20OS.
+
+print_dom ()
+{
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | grep "$2" | awk -v sd="$2" '{print "The subdomain " sd " is a " $4 " record and points to " $5}'
+}
+
+if [ "$2" ]
+then
+	print_dom "$1" "$2"
+else
+	print_dom "$1" "www"
+	print_dom "$1" "lb-01"
+	print_dom "$1" "web-01"
+	print_dom "$1" "web-02"
+fi
