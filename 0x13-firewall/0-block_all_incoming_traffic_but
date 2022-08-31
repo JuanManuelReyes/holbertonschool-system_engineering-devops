@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #Block incomming traffix except from 22, 443, 80
+#https://adamtheautomator.com/ufw-firewall/#:~:text=Installing%20UFW%20and%20Enabling%20IPv6%20Connection,-Even%20though%20UFW&text=Install%20UFW%20first%20with%20the,to%20allow%20connections%20over%20IPv6.&text=1.,update%20for%20less%20user%20intervention.
+#https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands
+
 sudo apt update -y
 sudo apt install ufw -y
 
