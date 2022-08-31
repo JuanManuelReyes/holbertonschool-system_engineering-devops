@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#run nginx as nginx user and listen on port 8080
+#https://linuxize.com/post/linux-chown-command/
+#https://fedingo.com/how-to-change-nginx-user/
+pkill apache2
+
+chown nginx:nginx /etc/nginx/nginx.conf
+chmod 700 /etc/nginx/nginx.conf
+
+sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
+
+sudo -u nginx service nginx start
