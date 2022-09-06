@@ -36,4 +36,4 @@ if __name__ == '__main__':
             todolist.append(dict)
                 
             tododict[user['id']] = todolist
-            file.write(json.dumps(tododict))
+        file.write(json.dumps(tododict))
