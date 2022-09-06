@@ -19,18 +19,20 @@ if __name__ == '__main__':
     users = requests.get("https://jsonplaceholder.typicode.com/users")
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
     
-    todolist = []
     tododict = {}
-    for user in users.json():
-        USER_ID = user.get("id")
-        USERNAME = user.get("username")
-        with open("todo_all_employees.json", "w", encoding="utf-8") as file:
+    
+    with open("todo_all_employees.json", "w", encoding="utf-8") as file:
+        for user in users.json():
+            todolist = []
+            USER_ID = user.get("id")
+            USERNAME = user.get("username")
+
             for task in todos.json():
                 dict = {}
-                if user.get("id") == id:
+                if task.get("id") == USER_ID:
                     dict['task'] = task['title']
                     dict['completed'] = task['completed']
                     dict['username'] = USERNAME
-                    todolist.append(dict)
-            tododict[id] = todolist
+                todolist.append(dict)
+            tododict[user["id"]] = todolist
             file.write(json.dumps(tododict))
