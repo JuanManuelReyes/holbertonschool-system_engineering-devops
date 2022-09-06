@@ -22,7 +22,7 @@ if __name__ == '__main__':
     users = requests.get("https://jsonplaceholder.typicode.com/users")
     
     for user in users.json():
-        if user.get('id') == id:
+        if user.get('id') == int(id):
             EMPLOYEE_NAME = user.get('name')
             break
             
