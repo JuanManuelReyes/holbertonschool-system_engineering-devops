@@ -12,6 +12,7 @@ if __name__ == '__main__':
     Display on the standard output the employee TODO list progress.
     """
     
+    EMPLOYEE_NAME = ""
     TOTAL_NUMBER_OF_TASKS = 0
     NUMBER_OF_DONE_TASKS = 0
     TASK_TITLE = 0
