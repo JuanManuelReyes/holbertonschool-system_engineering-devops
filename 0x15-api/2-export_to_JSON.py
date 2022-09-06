@@ -14,7 +14,6 @@ if __name__ == '__main__':
     """
 
     USER_ID  = 0
-    TASK_TITLE = []
     
     #id must be int
     id = int(argv[1])
@@ -29,10 +28,17 @@ if __name__ == '__main__':
             
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
     
-    dict = {}
-        
-        
-    
+    todolist = []
+    tododict = {}
+
     file_name = "{}.json".format(USER_ID)
     with open(file_name, "w", encoding = 'utf-8') as file:
-        json.dump()
+        for task in todos.json():
+            dict = {}
+            if user.get("id") == id:
+                dict['task'] = task['title']
+                dict['completed'] = task['completed']
+                dict['username'] = USERNAME
+                todolist.append(dict)
+        tododict[id] = todolist
+        file.write(json.dumps(tododict))
