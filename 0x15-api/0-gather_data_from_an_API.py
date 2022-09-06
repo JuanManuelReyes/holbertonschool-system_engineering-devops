@@ -17,12 +17,13 @@ if __name__ == '__main__':
     NUMBER_OF_DONE_TASKS = 0
     TASK_TITLE = 0
     
-    id = argv[1]
+    #id must be int
+    id = int(argv[1])
     
     users = requests.get("https://jsonplaceholder.typicode.com/users")
     
     for user in users.json():
-        if user.get('id') == int(id):
+        if user.get('id') == id:
             EMPLOYEE_NAME = user.get('name')
             break
             
