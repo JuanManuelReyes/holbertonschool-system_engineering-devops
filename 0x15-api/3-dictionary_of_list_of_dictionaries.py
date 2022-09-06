@@ -33,7 +33,7 @@ if __name__ == '__main__':
                     dict['task'] = task['title']
                     dict['completed'] = task['completed']
                     dict['username'] = USERNAME
-                todolist.append(dict)
+            todolist.append(dict)
                 
             tododict[user['id']] = todolist
             file.write(json.dumps(tododict))
