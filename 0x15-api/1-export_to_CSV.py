@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 https://jsonplaceholder.typicode.com/
-Using what you did in the task #0, extend your Python script to export data in the CSV format.    
+Using what you did in the task #0, extend your Python
+script to export data in the CSV format.    
 """
 
 import csv
@@ -36,10 +37,12 @@ if __name__ == '__main__':
         for task in todos.json():
             if task.get("userId") == id:
                 TASK_TITLE = task.get("title")
-                if task.get("completed") == True:
+                if task.get("completed") is True:
                     TASK_COMPLETED_STATUS = True
                 else:
                     TASK_COMPLETED_STATUS = False
                 
-                file.write('"{}","{}","{}","{}"\n'.format(USER_ID, USERNAME, TASK_COMPLETED_STATUS, TASK_TITLE))
+                file.write('"{}","{}","{}","{}"\n'
+                           .format(USER_ID, USERNAME, TASK_COMPLETED_STATUS,
+                                   TASK_TITLE))
 
