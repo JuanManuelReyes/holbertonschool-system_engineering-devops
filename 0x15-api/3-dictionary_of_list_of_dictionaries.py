@@ -29,10 +29,11 @@ if __name__ == '__main__':
 
             for task in todos.json():
                 dict = {}
-                if task.get("id") == USER_ID:
+                if task.get("userId") == USER_ID:
                     dict['task'] = task['title']
                     dict['completed'] = task['completed']
                     dict['username'] = USERNAME
                 todolist.append(dict)
-            tododict[user["id"]] = todolist
+                
+            tododict[user['id']] = todolist
             file.write(json.dumps(tododict))
