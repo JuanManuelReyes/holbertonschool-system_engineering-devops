@@ -16,9 +16,6 @@ if __name__ == '__main__':
 
     USER_ID = 0
 
-    # id must be int
-    id = int(argv[1])
-
     users = requests.get("https://jsonplaceholder.typicode.com/users")
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
     
