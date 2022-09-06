@@ -31,11 +31,15 @@ if __name__ == '__main__':
             
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
     
-    for task in todos.json():
-        if task.get("userId") == id:
-            if task.get("completed") == True:
-                TASK_COMPLETED_STATUS = True
+    file_name = "{}.csv".format(USER_ID)
+    with open(file_name, "w", encoding = 'utf-8') as file:
+        for task in todos.json():
+            if task.get("userId") == id:
                 TASK_TITLE = task.get("title")
-            else:
-                TASK_COMPLETED_STATUS = False
-            print("{},{},{},{}".format(USER_ID, USERNAME, TASK_COMPLETED_STATUS, TASK_TITLE))
+                if task.get("completed") == True:
+                    TASK_COMPLETED_STATUS = True
+                else:
+                    TASK_COMPLETED_STATUS = False
+                
+                file.write('"{}","{}","{}","{}"\n'.format(USER_ID, USERNAME, TASK_COMPLETED_STATUS, TASK_TITLE))
+
