@@ -18,9 +18,9 @@ if __name__ == '__main__':
 
     users = requests.get("https://jsonplaceholder.typicode.com/users")
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
-    
+
     tododict = {}
-    
+
     with open("todo_all_employees.json", "w", encoding="utf-8") as file:
         for user in users.json():
             todolist = []
@@ -34,6 +34,6 @@ if __name__ == '__main__':
                     dict['completed'] = task['completed']
                     dict['username'] = USERNAME
                     todolist.append(dict)
-                
+
             tododict[user['id']] = todolist
         file.write(json.dumps(tododict))
