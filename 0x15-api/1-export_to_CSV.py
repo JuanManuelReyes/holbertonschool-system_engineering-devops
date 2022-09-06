@@ -18,20 +18,20 @@ if __name__ == '__main__':
     USERNAME = ""
     TAS_COMPLETED_STATUS = False
     TASK_TITLE = ""
-    
+
     #id must be int
     id = int(argv[1])
-    
+
     users = requests.get("https://jsonplaceholder.typicode.com/users")
-    
+
     for user in users.json():
         if user.get("id") == id:
             USER_ID = user.get("id")
             USERNAME = user.get("username")
             break
-            
+
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
-    
+
     file_name = "{}.csv".format(USER_ID)
     with open(file_name, "w", encoding = 'utf-8') as file:
         for task in todos.json():
@@ -41,7 +41,7 @@ if __name__ == '__main__':
                     TASK_COMPLETED_STATUS = True
                 else:
                     TASK_COMPLETED_STATUS = False
-                
+
                 file.write('"{}","{}","{}","{}"\n'
                            .format(USER_ID, USERNAME, TASK_COMPLETED_STATUS,
                                    TASK_TITLE))
