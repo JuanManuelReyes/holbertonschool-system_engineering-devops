@@ -11,7 +11,7 @@ _For this project, we expect you to look at these concepts:_
 -   [Load balancer](https://intranet.hbtn.io/concepts/46)
 -   [Server](https://intranet.hbtn.io/concepts/67)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lQNEW76KdYg" title="web infrastructure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/lQNEW76KdYg
 
 ## Resources
 
