@@ -7,6 +7,7 @@ _For this project, we expect you to look at these concepts:_
 -   [Network basics](https://intranet.hbtn.io/concepts/33)
 -   [Docker](https://intranet.hbtn.io/concepts/65)
 -   [Web stack debugging](https://intranet.hbtn.io/concepts/68)
+
 ![enter image description here](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/265/uWLzjc8.jpg)
 ## Background Context
 
