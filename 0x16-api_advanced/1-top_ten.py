@@ -13,10 +13,7 @@ def top_ten(subreddit):
     headers = requests.utils.default_headers()
 
     headers.update(
-    {
-        'User-Agent': 'My User Agent 1.0',
-    }
-    )
+    {'User-Agent': 'My User Agent 1.0'})
 
     res = requests.get(url, headers=headers)
 
