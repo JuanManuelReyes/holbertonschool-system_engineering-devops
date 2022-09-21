@@ -21,7 +21,7 @@ def top_ten(subreddit):
     if res.status_code <= 200:
         counter = 0
         while(counter < 10):
-            print (res_json['data']['children'][counter]['data']['title'])
+            print(res_json['data']['children'][counter]['data']['title'])
             counter += 1
     else:
         print("None")
