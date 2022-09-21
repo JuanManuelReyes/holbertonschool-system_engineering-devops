@@ -17,11 +17,7 @@ def number_of_subscribers(subreddit):
 
     headers = requests.utils.default_headers()
 
-    headers.update(
-    {
-        'User-Agent': 'My User Agent 1.0',
-    }
-    )
+    headers.update({'User-Agent': 'My User Agent 1.0'})
 
     res = requests.get(url, headers=headers)
 
