@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""asd"""
+
 import requests
 
 def top_ten(subreddit):
