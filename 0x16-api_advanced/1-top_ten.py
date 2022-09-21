@@ -12,8 +12,7 @@ def top_ten(subreddit):
 
     headers = requests.utils.default_headers()
 
-    headers.update(
-    {'User-Agent': 'My User Agent 1.0'})
+    headers.update({'User-Agent': 'My User Agent 1.0'})
 
     res = requests.get(url, headers=headers)
 
@@ -21,7 +20,7 @@ def top_ten(subreddit):
 
     if res.status_code <= 200:
         counter = 0
-        while (counter < 10):
+        while(counter < 10):
             print (res_json['data']['children'][counter]['data']['title'])
             counter += 1
     else:
