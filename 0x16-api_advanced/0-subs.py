@@ -2,7 +2,11 @@
 import requests
 
 def number_of_subscribers(subreddit):
-    """ Return the sub number"""
+    """ 
+    Return the sub number
+    https://stackoverflow.com/questions/
+    10606133/%20sending-user-agent-using-requests-library-in-python
+    """
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     
     headers = requests.utils.default_headers()
