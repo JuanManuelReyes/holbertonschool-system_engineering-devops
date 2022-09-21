@@ -6,6 +6,9 @@ def number_of_subscribers(subreddit):
     Return the sub number
     https://stackoverflow.com/questions/
     10606133/%20sending-user-agent-using-requests-library-in-python
+
+    https://developer.mozilla.org/en-US/docs/Web/HTTP/
+    Status#successful_responses
     """
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     
@@ -17,11 +20,11 @@ def number_of_subscribers(subreddit):
     }
     )
     
-    res = requests.get(url, headers=headers).json()
+    res = requests.get(url, headers=headers)
     
-    subs = res.get('data').get('subscribers')
+    res_json = res.json()
     
-    if not subs:
-        return 0
+    if res.status_code == 201:
+        return res_json['data']['subscribers']
     else:
-        return subs
+        return 0
