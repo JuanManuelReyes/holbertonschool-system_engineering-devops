@@ -5,6 +5,16 @@ def number_of_subscribers(subreddit):
     """ Return the sub number"""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     
-    res = requests.get(url)
+    headers = requests.utils.default_headers()
     
-    print(res)
+    headers.update(
+    {
+        'User-Agent': 'My User Agent 1.0',
+    }
+    )
+    
+    res = requests.get(url, headers=headers).json()
+    
+    subs = res.get('data').get('subscribers')
+    
+    return subs
