@@ -21,7 +21,7 @@ def number_of_subscribers(subreddit):
     
     subs = res.get('data').get('subscribers')
     
-    if subs == 0:
+    if not subs:
         return 0
     else:
         return subs
