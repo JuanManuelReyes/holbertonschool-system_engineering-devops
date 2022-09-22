@@ -15,7 +15,8 @@ def recurse(subreddit, hot_list=[], after=None):
 
         headers.update({'User-Agent': 'My User Agent 1.0'})
 
-        res = requests.get(url, headers=headers, params={'after': after})
+        res = requests.get(url, headers=headers, params={'after': after},
+                           allow_redirects=False)
 
         res_json = res.json()
 
