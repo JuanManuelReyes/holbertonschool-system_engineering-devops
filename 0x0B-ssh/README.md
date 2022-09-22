@@ -5,7 +5,7 @@ Along with this project, you have been attributed an Ubuntu server, living in a 
 
 You can access your server information in the  [my servers](https://intranet.hbtn.io/rltoken/owYhGMuyPTY4OyvSGJljGQ "my servers")  section of the intranet, each line with contains the IP and username you should use to connect via  `ssh`.
 
-**Note:**  Your server is configured with an Ubuntu 20.04 LTS environment.
+**Note:**  Your server is configured with an Ubuntu 20.04 LTS environment
 
 ## Resources
 
