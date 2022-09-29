@@ -1,7 +1,7 @@
 # Comment
 
 # Comment
-exec { 'fix_error':
+exec {'replace':
   provider => shell,
   command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 2000\"/" /etc/default/nginx',
 }
